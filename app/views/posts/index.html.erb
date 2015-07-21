@@ -1,0 +1,16 @@
+<div class="article-list">
+  <% @posts.each do |post| %>
+    <div class="row">
+      <article class="col-md-6 col-md-offset-3">
+        <img class="img-responsive" src="<%= post.image_url %>" alt="">
+        <h3><a href="#"><%= post.title %></a></h3>
+        <h4><%= truncate(post.contents, :length => 144) %></h4>
+        <div class="btn-group" role="group" aria-label="...">
+          <a class="btn btn-primary" href="/posts/<%= post.id %>"><i class="fa fa-search-plus"></i> Show</a>
+          <a class="btn btn-warning" href="/posts/<%= post.id %>/edit"><i class="fa fa-pencil-square-o"></i> Edit</a>
+          <a class="btn btn-danger" href="/posts/<%= post.id %>/destroy"><i class="fa fa-trash-o"></i> Destroy</a>
+        </div>
+      </article>
+    </div>
+  <% end %>
+</div>
