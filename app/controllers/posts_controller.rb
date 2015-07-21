@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def new
-
+    @post = Post.new
   end
 
   def create
@@ -8,9 +8,12 @@ class PostsController < ApplicationController
     @post.title = params['title']
     @post.image_url = params['image_url']
     @post.contents = params['contents']
-    @post.save
 
-    redirect_to "/posts/#{@post.id}"
+    if @post.save
+      redirect_to "/posts/#{@post.id}"
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -26,9 +29,11 @@ class PostsController < ApplicationController
     @post.title = params['title']
     @post.image_url = params['image_url']
     @post.contents = params['contents']
-    @post.save
-
-    redirect_to "/posts/#{@post.id}"
+    if @post.save
+      redirect_to "/posts/#{@post.id}"
+    else
+      render 'edit'
+    end
   end
 
   def destroy

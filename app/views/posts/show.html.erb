@@ -19,7 +19,7 @@
   <div class="col-md-8 col-md-offset-2">
     <div class="btn-group" role="group" aria-label="...">
       <a class="btn btn-warning" href="/posts/<%= @post.id %>/edit"><i class="fa fa-pencil-square-o"></i> Edit</a>
-      <a class="btn btn-danger" href="/posts/<%= @post.id %>/destroy"><i class="fa fa-trash-o"></i> Destroy</a>
+      <a class="btn btn-danger" href="/posts/<%= @post.id %>" data-method="delete"><i class="fa fa-trash-o"></i> Destroy</a>
     </div>
   </div>
   <div class="col-md-8 col-md-offset-2">

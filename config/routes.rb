@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   # CREATE
   get('/posts/new', {:controller => 'posts', :action => 'new'})
-  get('/create_post', {:controller => 'posts', :action => 'create'})
+  post('/posts', {:controller => 'posts', :action => 'create'})
 
   # READ
   get('/posts/:id', {:controller => 'posts', :action => 'show'})
@@ -10,10 +10,13 @@ Rails.application.routes.draw do
 
   # UPDATE
   get('/posts/:id/edit', {:controller => 'posts', :action => 'edit'})
-  get('/update_post/:id', {:controller => 'posts', :action => 'update'})
+  patch('/posts/:id', {:controller => 'posts', :action => 'update'})
 
   # DESTROY
-  get('/posts/:id/destroy', {:controller => 'posts', :action => 'destroy'})
+  delete('/posts/:id', {:controller => 'posts', :action => 'destroy'})
+
+
+
 
   get('/search', {:controller => 'posts', :action => 'search'})
 
