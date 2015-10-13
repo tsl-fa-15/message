@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Edit post #<%= @post.id %></h1>
+      <form action="/update_post/<%= @post.id %>">
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input type="text" class="form-control" id="title" placeholder="title" name="title" value="<%= @post.title %>">
+        </div>
+        <div class="form-group">
+          <label for="image_url">Image URL:</label>
+          <input type="text" class="form-control" id="image_url" placeholder="Image URL" name="image_url" value="<%= @post.image_url  %>">
+        </div>
+        <div class="form-group">
+          <label for="contents">Contents:</label>
+          <textarea class="form-control" name="contents" id="contents" placeholder="Contents..." cols="30" rows="10" >
+            <%= @post.contents %>
+          </textarea>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
