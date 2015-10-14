@@ -16,7 +16,7 @@
       <%= link_to "/posts/#{@post.id}/edit", :class => 'btn btn-warning' do %>
         <i class="fa fa-pencil-square-o"></i> Edit
       <% end %>
-      <%= link_to "/posts/#{@post.id}/destroy", :class => 'btn btn-danger', :data => {confirm: 'Are you sure?'} do %>
+      <%= link_to "/posts/#{@post.id}/destroy", :class => 'btn btn-danger', :data => {confirm: 'Are you sure?'}, :method => :delete do %>
         <i class="fa fa-trash-o"></i> Destroy
       <% end %>
     </div>

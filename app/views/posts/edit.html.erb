@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
       <h1>Edit post #<%= @post.id %></h1>
-      <form action="/update_post/<%= @post.id %>">
+      <%= form_tag "/update_post/#{@post.id}", :method => :patch do %>
         <div class="form-group">
           <label for="title">Title:</label>
           <input type="text" class="form-control" id="title" placeholder="title" name="title" value="<%= @post.title %>">
@@ -18,7 +18,7 @@
           </textarea>
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+      <% end %>
     </div>
   </div>
 </div>
