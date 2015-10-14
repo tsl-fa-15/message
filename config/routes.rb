@@ -1,19 +1,19 @@
 Rails.application.routes.draw do
 
   # CREATE
-  get('/posts/new', {:controller => 'posts', :action => 'new'})
-  post('/create_post', {:controller => 'posts', :action => 'create'})
+  get '/posts/new', :controller => 'posts', :action => 'new', :as => 'new_post'
+  post '/posts', :controller => 'posts', :action => 'create', :as => 'posts'
 
   # READ
-  get('/posts/:id', {:controller => 'posts', :action => 'show'})
-  get('/posts/', {:controller => 'posts', :action => 'index'})
+  get '/posts/:id', :controller => 'posts', :action => 'show', :as => 'post'
+  get '/posts/', :controller => 'posts', :action => 'index'
 
   # UPDATE
-  get('/posts/:id/edit', {:controller => 'posts', :action => 'edit'})
-  patch('/update_post/:id', {:controller => 'posts', :action => 'update'})
+  get '/posts/:id/edit', :controller => 'posts', :action => 'edit', :as => 'edit_post'
+  patch '/posts/:id', :controller => 'posts', :action => 'update'
 
   # DESTROY
-  delete('/posts/:id/destroy', {:controller => 'posts', :action => 'destroy'})
+  delete '/posts/:id', :controller => 'posts', :action => 'destroy'
 
 
 

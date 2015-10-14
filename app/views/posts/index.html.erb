@@ -6,13 +6,13 @@
         <h3><a href="#"><%= post.title %></a></h3>
         <h4><%= truncate(post.contents) %></h4>
         <div class="btn-group" role="group" aria-label="...">
-          <%= link_to "/posts/#{post.id}", :class => "btn btn-primary" do %>
+          <%= link_to post_path(post.id), :class => "btn btn-primary" do %>
             <i class="fa fa-search-plus"></i> Show
           <% end %>
-          <%= link_to "/posts/#{post.id}/edit", :class => 'btn btn-warning' do %>
+          <%= link_to edit_post_path(post.id), :class => 'btn btn-warning' do %>
             <i class="fa fa-pencil-square-o"></i> Edit
           <% end %>
-          <%= link_to "/posts/#{post.id}/destroy", :class => 'btn btn-danger', :data => {confirm: 'Are you sure?'}, :method => :delete do %>
+          <%= link_to post_path(post.id), :class => 'btn btn-danger', :data => {confirm: 'Are you sure?'}, :method => :delete do %>
             <i class="fa fa-trash-o"></i> Destroy
           <% end %>
         </div>
